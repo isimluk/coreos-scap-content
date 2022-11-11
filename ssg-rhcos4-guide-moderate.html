@@ -75,7 +75,7 @@ creators of this guidance assume no responsibility whatsoever for its use by
 other parties, and makes no guarantees, expressed or implied, about its
 quality, reliability, or any other characteristic.
 </div></div></div><table class="table table-bordered"><tr><th>Profile Title</th><td>NIST 800-53 Moderate-Impact Baseline for Red Hat Enterprise Linux CoreOS</td></tr><tr><th>Profile ID</th><td>xccdf_org.ssgproject.content_profile_moderate</td></tr></table></div><div class="col-md-4"><h2>Revision History</h2><p>Current version: <strong>0.1.65</strong></p><ul><li><strong>draft</strong>
-                            (as of 2022-11-10)
+                            (as of 2022-11-11)
                         </li></ul><h2>Platforms</h2><ul class="list-group"><li class="list-group-item"><span class="label label-default">cpe:/o:redhat:enterprise_linux_coreos:4</span></li></ul></div></div></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software</a></li><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li><li><a href="#xccdf_org.ssgproject.content_group_auditing">System Accounting with auditd</a></li><li><a href="#xccdf_org.ssgproject.content_group_bootloader-grub2">GRUB2 bootloader configuration</a></li><li><a href="#xccdf_org.ssgproject.content_group_logging">Configure Syslog</a></li><li><a href="#xccdf_org.ssgproject.content_group_network">Network Configuration and Firewalls</a></li><li><a href="#xccdf_org.ssgproject.content_group_permissions">File Permissions and Masks</a></li><li><a href="#xccdf_org.ssgproject.content_group_selinux">SELinux</a></li></ol><li><a href="#xccdf_org.ssgproject.content_group_services">Services</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_ntp">Network Time Protocol</a></li><li><a href="#xccdf_org.ssgproject.content_group_ssh">SSH Server</a></li><li><a href="#xccdf_org.ssgproject.content_group_usbguard">USBGuard daemon</a></li></ol></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 0px"><small>contains 241 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_system" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 19px"><h3 id="xccdf_org.ssgproject.content_group_system">System Settings
                           <a class="small" href="#xccdf_org.ssgproject.content_group_system">[ref]</a><span class="label label-default pull-right">group</span></h3><p>Contains rules that check correct system settings.</p></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 19px"><small>contains 222 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_software" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_software" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px"><h3 id="xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software
                           <a class="small" href="#xccdf_org.ssgproject.content_group_software">[ref]</a><span class="label label-default pull-right">group</span></h3><p>The following sections contain information on
@@ -8026,10 +8026,10 @@ detailed information.</p></td></tr><tr data-tt-id="children-xccdf_org.ssgproject
 during a SSH session and waits for a response from the SSH client.
 The option <code>ClientAliveInterval</code> configures timeout after
 each <code>ClientAliveCountMax</code> message. If the SSH server does not
-receive a response from the client, then the connection is considered idle
+receive a response from the client, then the connection is considered unresponsive
 and terminated.
 
-To ensure the SSH idle timeout occurs precisely when the
+To ensure the SSH timeout occurs precisely when the
 <code>ClientAliveInterval</code> is set, set the <code>ClientAliveCountMax</code> to
 value of <code>0</code> in
 
@@ -8052,11 +8052,11 @@ spec:
         mode: 0600
         path: /etc/ssh/sshd_config
         overwrite: true
-</code></pre></div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout" id="guide-tree-leaf-idm44489" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_ssh_server"><td style="padding-left: 76px"><h4 id="xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout">Set SSH Idle Timeout Interval
-                      <a class="small" href="#xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout">[ref]</a><span class="label label-default pull-right">rule</span></h4><p>SSH allows administrators to set an idle timeout interval. After this interval
-has passed, the idle user will be automatically logged out.
+</code></pre></div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout" id="guide-tree-leaf-idm44489" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_ssh_server"><td style="padding-left: 76px"><h4 id="xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout">Set SSH Client Alive Interval
+                      <a class="small" href="#xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout">[ref]</a><span class="label label-default pull-right">rule</span></h4><p>SSH allows administrators to set a network responsiveness timeout interval.
+After this interval has passed, the unresponsive client will be automatically logged out.
 <br><br>
-To set an idle timeout interval, edit the following line in <code>/etc/ssh/sshd_config</code> as
+To set this timeout interval, edit the following line in <code>/etc/ssh/sshd_config</code> as
 follows:
 <pre>ClientAliveInterval <b><abbr title="from Benchmark/Value: xccdf_org.ssgproject.content_value_sshd_idle_timeout_value">300</abbr></b></pre>
 <br><br>
@@ -8065,8 +8065,8 @@ of 10 minutes, set <b>interval</b> to 600.
 <br><br>
 If a shorter timeout has already been set for the login shell, that value will
 preempt any SSH setting made in <code>/etc/ssh/sshd_config</code>. Keep in mind that
-some processes may stop SSH  from correctly detecting that the user is idle.</p><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
-                            SSH disconnecting idle clients will not have desired effect without also
+some processes may stop SSH from correctly detecting that the user is idle.</p><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
+                            SSH disconnecting unresponsive clients will not have desired effect without also
 configuring ClientAliveCountMax in the SSH service configuration.</div></div><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
                             Following conditions may prevent the SSH session to time out:
 <ul><li>Remote processes on the remote machine generates output. As the output has to be transferred over the network to the client, the timeout is reset every time such transfer happens.</li><li>Any <code>scp</code> or <code>sftp</code> activity by the same user to the host resets the timeout.</li></ul></div></div><span class="label label-primary">Rationale:</span><p>Terminating an idle ssh session within a short time period reduces the window of
