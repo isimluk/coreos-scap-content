@@ -75,7 +75,7 @@ creators of this guidance assume no responsibility whatsoever for its use by
 other parties, and makes no guarantees, expressed or implied, about its
 quality, reliability, or any other characteristic.
 </div></div></div></div></div><div id="profileinfo"><h2>Profile Information</h2><div class="row"><div class="col-md-5 well well-lg horizontal-scroll"><table class="table table-bordered"><tr><th>Profile Title</th><td>NIST 800-53 High-Impact Baseline for Red Hat Enterprise Linux CoreOS</td></tr><tr><th>Profile ID</th><td>xccdf_org.ssgproject.content_profile_high</td></tr></table></div><div class="col-md-3"><h4>CPE Platforms</h4><ul class="list-group"><li class="list-group-item"><span class="label label-default" title="CPE platform cpe:/o:redhat:enterprise_linux_coreos:4 is applicable to this Benchmark">cpe:/o:redhat:enterprise_linux_coreos:4</span></li></ul></div></div></div><div id="revisionhistory"><h2>Revision History</h2><p>Current version: <strong>0.1.71</strong></p><ul><li><strong>draft</strong>
-                    (as of 2023-10-10)
+                    (as of 2023-10-11)
                 </li></ul></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software</a></li><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li><li><a href="#xccdf_org.ssgproject.content_group_auditing">System Accounting with auditd</a></li><li><a href="#xccdf_org.ssgproject.content_group_bootloader-grub2">GRUB2 bootloader configuration</a></li><li><a href="#xccdf_org.ssgproject.content_group_logging">Configure Syslog</a></li><li><a href="#xccdf_org.ssgproject.content_group_network">Network Configuration and Firewalls</a></li><li><a href="#xccdf_org.ssgproject.content_group_permissions">File Permissions and Masks</a></li><li><a href="#xccdf_org.ssgproject.content_group_selinux">SELinux</a></li></ol><li><a href="#xccdf_org.ssgproject.content_group_services">Services</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_ntp">Network Time Protocol</a></li><li><a href="#xccdf_org.ssgproject.content_group_ssh">SSH Server</a></li><li><a href="#xccdf_org.ssgproject.content_group_usbguard">USBGuard daemon</a></li></ol></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 0px" colspan="2" id="xccdf_org.ssgproject.content_benchmark_RHCOS-4"><span class="label label-default">Group</span>  
                 Guide to the Secure Configuration of Red Hat Enterprise Linux CoreOS 4
                           <small>Group contains 52 groups and 242 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 19px" colspan="2" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
@@ -7754,7 +7754,7 @@ spec:
         overwrite: true
         path: /etc/chrony.d/.mco-keep
       - contents:
-          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%20%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
+          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
         mode: 420
         overwrite: true
         path: /etc/chrony.d/ntp-server.conf
@@ -7785,7 +7785,7 @@ spec:
         overwrite: true
         path: /etc/chrony.d/.mco-keep
       - contents:
-          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%20%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
+          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
         mode: 420
         overwrite: true
         path: /etc/chrony.d/ntp-server.conf
@@ -7870,7 +7870,7 @@ spec:
         overwrite: true
         path: /etc/chrony.d/.mco-keep
       - contents:
-          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%20%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
+          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
         mode: 420
         overwrite: true
         path: /etc/chrony.d/ntp-server.conf
@@ -7966,7 +7966,7 @@ spec:
         overwrite: true
         path: /etc/chrony.d/.mco-keep
       - contents:
-          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%20%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
+          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
         mode: 420
         overwrite: true
         path: /etc/chrony.d/ntp-server.conf
@@ -8061,7 +8061,7 @@ spec:
         overwrite: true
         path: /etc/chrony.d/.mco-keep
       - contents:
-          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%20%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
+          source: data:,{{ %23%0A%23%20This%20file%20controls%20the%20configuration%20of%20the%20ntp%20server%0A%23%20%7B%7B.var_multiple_time_servers%7D%7D%20we%20have%20to%20put%20variable%20array%20name%20here%20for%20mutilines%20remediation%0A%7B%7B%24var_time_service_set_maxpoll%3A%3D.var_time_service_set_maxpoll%7D%7D%0A%7B%7Brange%20%24element%3A%3D.var_multiple_time_servers%7CtoArrayByComma%7D%7Dserver%20%7B%7B%24element%7D%7D%20minpoll%204%20maxpoll%20%7B%7B%24var_time_service_set_maxpoll%7D%7D%0A%7B%7Bend%7D%7D }}
         mode: 420
         overwrite: true
         path: /etc/chrony.d/ntp-server.conf
