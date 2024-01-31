@@ -75,7 +75,7 @@ creators of this guidance assume no responsibility whatsoever for its use by
 other parties, and makes no guarantees, expressed or implied, about its
 quality, reliability, or any other characteristic.
 </div></div></div></div></div><div id="profileinfo"><h2>Profile Information</h2><div class="row"><div class="col-md-5 well well-lg horizontal-scroll"><table class="table table-bordered"><tr><th>Profile Title</th><td>NIST 800-53 Moderate-Impact Baseline for Red Hat Enterprise Linux CoreOS</td></tr><tr><th>Profile ID</th><td>xccdf_org.ssgproject.content_profile_moderate-rev-4</td></tr></table></div><div class="col-md-3"><h4>CPE Platforms</h4><ul class="list-group"><li class="list-group-item"><span class="label label-default" title="CPE platform cpe:/o:redhat:enterprise_linux_coreos:4 is applicable to this Benchmark">cpe:/o:redhat:enterprise_linux_coreos:4</span></li></ul></div></div></div><div id="revisionhistory"><h2>Revision History</h2><p>Current version: <strong>0.1.73</strong></p><ul><li><strong>draft</strong>
-                    (as of 2024-01-30)
+                    (as of 2024-01-31)
                 </li></ul></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software</a></li><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li><li><a href="#xccdf_org.ssgproject.content_group_auditing">System Accounting with auditd</a></li><li><a href="#xccdf_org.ssgproject.content_group_bootloader-grub2">GRUB2 bootloader configuration</a></li><li><a href="#xccdf_org.ssgproject.content_group_logging">Configure Syslog</a></li><li><a href="#xccdf_org.ssgproject.content_group_network">Network Configuration and Firewalls</a></li><li><a href="#xccdf_org.ssgproject.content_group_permissions">File Permissions and Masks</a></li><li><a href="#xccdf_org.ssgproject.content_group_selinux">SELinux</a></li></ol><li><a href="#xccdf_org.ssgproject.content_group_services">Services</a></li><ol><li><a href="#xccdf_org.ssgproject.content_group_ntp">Network Time Protocol</a></li><li><a href="#xccdf_org.ssgproject.content_group_ssh">SSH Server</a></li><li><a href="#xccdf_org.ssgproject.content_group_usbguard">USBGuard daemon</a></li></ol></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 0px" colspan="2" id="xccdf_org.ssgproject.content_benchmark_RHCOS-4"><span class="label label-default">Group</span>  
                 Guide to the Secure Configuration of Red Hat Enterprise Linux CoreOS 4
                           <small>Group contains 52 groups and 241 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_RHCOS-4"><td style="padding-left: 19px" colspan="2" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
@@ -6495,7 +6495,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20atm%20/bin/true%0Ablacklist%20atm%0A
+          source: data:,install%20atm%20/bin/false%0Ablacklist%20atm%0A
         mode: 0644
         path: /etc/modprobe.d/atm.conf
         overwrite: true
@@ -6520,7 +6520,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20can%20/bin/true%0Ablacklist%20can%0A
+          source: data:,install%20can%20/bin/false%0Ablacklist%20can%0A
         mode: 0644
         path: /etc/modprobe.d/can.conf
         overwrite: true
@@ -6544,7 +6544,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20firewire-core%20/bin/true%0Ablacklist%20firewire-core%0A
+          source: data:,install%20firewire-core%20/bin/false%0Ablacklist%20firewire-core%0A
         mode: 0644
         path: /etc/modprobe.d/firewire-core.conf
         overwrite: true
@@ -6570,7 +6570,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20sctp%20/bin/true%0Ablacklist%20sctp%0A
+          source: data:,install%20sctp%20/bin/false%0Ablacklist%20sctp%0A
         mode: 0644
         path: /etc/modprobe.d/sctp.conf
         overwrite: true
@@ -6599,7 +6599,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20tipc%20/bin/true%0Ablacklist%20tipc%0A
+          source: data:,install%20tipc%20/bin/false%0Ablacklist%20tipc%0A
         mode: 0644
         path: /etc/modprobe.d/tipc.conf
         overwrite: true
@@ -6712,7 +6712,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20bluetooth%20/bin/true%0Ablacklist%20bluetooth%0A
+          source: data:,install%20bluetooth%20/bin/false%0Ablacklist%20bluetooth%0A
         mode: 0644
         path: /etc/modprobe.d/bluetooth.conf
         overwrite: true
@@ -6735,7 +6735,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20cfg80211%20/bin/true%0Ablacklist%20cfg80211%0A
+          source: data:,install%20cfg80211%20/bin/false%0Ablacklist%20cfg80211%0A
         mode: 0644
         path: /etc/modprobe.d/cfg80211.conf
         overwrite: true
@@ -6758,7 +6758,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20iwlmvm%20/bin/true%0Ablacklist%20iwlmvm%0A
+          source: data:,install%20iwlmvm%20/bin/false%0Ablacklist%20iwlmvm%0A
         mode: 0644
         path: /etc/modprobe.d/iwlmvm.conf
         overwrite: true
@@ -6781,7 +6781,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20iwlwifi%20/bin/true%0Ablacklist%20iwlwifi%0A
+          source: data:,install%20iwlwifi%20/bin/false%0Ablacklist%20iwlwifi%0A
         mode: 0644
         path: /etc/modprobe.d/iwlwifi.conf
         overwrite: true
@@ -6804,7 +6804,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20mac80211%20/bin/true%0Ablacklist%20mac80211%0A
+          source: data:,install%20mac80211%20/bin/false%0Ablacklist%20mac80211%0A
         mode: 0644
         path: /etc/modprobe.d/mac80211.conf
         overwrite: true
@@ -7045,7 +7045,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20cramfs%20/bin/true%0Ablacklist%20cramfs%0A
+          source: data:,install%20cramfs%20/bin/false%0Ablacklist%20cramfs%0A
         mode: 0644
         path: /etc/modprobe.d/cramfs.conf
         overwrite: true
@@ -7069,7 +7069,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20freevxfs%20/bin/true%0Ablacklist%20freevxfs%0A
+          source: data:,install%20freevxfs%20/bin/false%0Ablacklist%20freevxfs%0A
         mode: 0644
         path: /etc/modprobe.d/freevxfs.conf
         overwrite: true
@@ -7093,7 +7093,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20hfs%20/bin/true%0Ablacklist%20hfs%0A
+          source: data:,install%20hfs%20/bin/false%0Ablacklist%20hfs%0A
         mode: 0644
         path: /etc/modprobe.d/hfs.conf
         overwrite: true
@@ -7117,7 +7117,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20hfsplus%20/bin/true%0Ablacklist%20hfsplus%0A
+          source: data:,install%20hfsplus%20/bin/false%0Ablacklist%20hfsplus%0A
         mode: 0644
         path: /etc/modprobe.d/hfsplus.conf
         overwrite: true
@@ -7141,7 +7141,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20jffs2%20/bin/true%0Ablacklist%20jffs2%0A
+          source: data:,install%20jffs2%20/bin/false%0Ablacklist%20jffs2%0A
         mode: 0644
         path: /etc/modprobe.d/jffs2.conf
         overwrite: true
@@ -7170,7 +7170,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20squashfs%20/bin/true%0Ablacklist%20squashfs%0A
+          source: data:,install%20squashfs%20/bin/false%0Ablacklist%20squashfs%0A
         mode: 0644
         path: /etc/modprobe.d/squashfs.conf
         overwrite: true
@@ -7200,7 +7200,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20udf%20/bin/true%0Ablacklist%20udf%0A
+          source: data:,install%20udf%20/bin/false%0Ablacklist%20udf%0A
         mode: 0644
         path: /etc/modprobe.d/udf.conf
         overwrite: true
@@ -7228,7 +7228,7 @@ spec:
     storage:
       files:
       - contents:
-          source: data:,install%20usb-storage%20/bin/true%0Ablacklist%20usb-storage%0A
+          source: data:,install%20usb-storage%20/bin/false%0Ablacklist%20usb-storage%0A
         mode: 0644
         path: /etc/modprobe.d/usb-storage.conf
         overwrite: true
@@ -8215,7 +8215,9 @@ recommended that at least one of the following options be leveraged:
 - DenyGroups variable gives the system administrator the option of
   denying specific groups of users to ssh into the system. The list
   consists of space separated group names. Numeric group IDs are not
-  recognized with this variable.</p></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale"><p>Specifying which accounts are allowed SSH access into the system reduces the
+  recognized with this variable.</p></div><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
+                                        Automated remediation is not available for this configuration check
+because each system has unique user names and group names.</div></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale"><p>Specifying which accounts are allowed SSH access into the system reduces the
 possibility of unauthorized access to the system.</p></div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">unknown</div></td></tr><tr><td>Identifiers and References</td><td class="identifiers"><p><span class="label label-info" title="A globally meaningful identifiers for this rule. MAY be the name or identifier of a security configuration issue or vulnerability that the rule remediates. By setting an identifier on a rule, the benchmark author effectively declares that the rule instantiates, implements, or remediates the issue for which the name was assigned.">Identifiers:</span> 
             <abbr title="https://ncp.nist.gov/cce: CCE-82664-4">CCE-82664-4</abbr></p><p><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span> 
             <a href="https://www.cisecurity.org/controls/">11</a>, <a href="https://www.cisecurity.org/controls/">12</a>, <a href="https://www.cisecurity.org/controls/">14</a>, <a href="https://www.cisecurity.org/controls/">15</a>, <a href="https://www.cisecurity.org/controls/">16</a>, <a href="https://www.cisecurity.org/controls/">18</a>, <a href="https://www.cisecurity.org/controls/">3</a>, <a href="https://www.cisecurity.org/controls/">5</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.02</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.04</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.05</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.07</a>, <a href="https://www.isaca.org/resources/cobit">DSS06.03</a>, <a href="https://www.isaca.org/resources/cobit">DSS06.06</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.1.12</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.3</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.4</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.5</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.6</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.7</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.8</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.1</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.11</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.12</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.13</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.6</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.2</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.3</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.4</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.5</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.6</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.7</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.2.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.2</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.2</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.3</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-3</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</a>, <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</a>, <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</a>, <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.PT-3</a>, <a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-2.2.4</a>, <a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config" id="guide-tree-leaf-idm47360" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_ssh"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config"><span class="label label-default">Rule</span>  
@@ -8255,7 +8257,7 @@ may be compromised.</p></div></td></tr><tr><td><span class="label label-warning"
             <a href="https://www.cisecurity.org/controls/">12</a>, <a href="https://www.cisecurity.org/controls/">13</a>, <a href="https://www.cisecurity.org/controls/">14</a>, <a href="https://www.cisecurity.org/controls/">15</a>, <a href="https://www.cisecurity.org/controls/">16</a>, <a href="https://www.cisecurity.org/controls/">18</a>, <a href="https://www.cisecurity.org/controls/">3</a>, <a href="https://www.cisecurity.org/controls/">5</a>, <a href="https://www.isaca.org/resources/cobit">APO01.06</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.04</a>, <a href="https://www.isaca.org/resources/cobit">DSS05.07</a>, <a href="https://www.isaca.org/resources/cobit">DSS06.02</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.1.13</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.13.10</a>, <a href="https://public.cyber.mil/stigs/cci/">CCI-000366</a>, <a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</a>, <a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</a>, <a href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</a>, <a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-17(a)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</a>, <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</a>, <a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</a>, <a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-2.2.4</a>, <a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"></div></td></tr></tbody></table></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_usbguard" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_services"><td style="padding-left: 38px" colspan="2" id="xccdf_org.ssgproject.content_group_usbguard"><span class="label label-default">Group</span>  
                 USBGuard daemon
                           <small>Group contains 4 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_usbguard" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_usbguard" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_services"><td style="padding-left: 38px" colspan="2"><p><a class="small" href="#xccdf_org.ssgproject.content_group_usbguard">[ref]</a>  
-                        The USBGuard daemon enforces the USB device authorization policy for all USB devices.</p></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_package_usbguard_installed" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_package_usbguard_installed" id="guide-tree-leaf-idm50068" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_package_usbguard_installed"><span class="label label-default">Rule</span>  
+                        The USBGuard daemon enforces the USB device authorization policy for all USB devices.</p></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_package_usbguard_installed" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_package_usbguard_installed" id="guide-tree-leaf-idm50069" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_package_usbguard_installed"><span class="label label-default">Rule</span>  
                                 Install usbguard Package
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_package_usbguard_installed">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"><p>
 The <code>usbguard</code> package can be installed with the following manifest:
@@ -8289,7 +8291,7 @@ Operator see
 against rogue USB devices by implementing basic whitelisting/blacklisting
 capabilities based on USB device attributes.</p></div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td>Identifiers and References</td><td class="identifiers"><p><span class="label label-info" title="A globally meaningful identifiers for this rule. MAY be the name or identifier of a security configuration issue or vulnerability that the rule remediates. By setting an identifier on a rule, the benchmark author effectively declares that the rule instantiates, implements, or remediates the issue for which the name was assigned.">Identifiers:</span> 
             <abbr title="https://ncp.nist.gov/cce: CCE-82524-0">CCE-82524-0</abbr></p><p><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span> 
-            <a href="https://public.cyber.mil/stigs/cci/">CCI-001958</a>, <a href="https://www.cyber.gov.au/acsc/view-all-content/ism">1418</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000378-GPOS-00163</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50087">(show)</a><br></br><div class="panel-collapse collapse" id="idm50087"><pre><code>---
+            <a href="https://public.cyber.mil/stigs/cci/">CCI-001958</a>, <a href="https://www.cyber.gov.au/acsc/view-all-content/ism">1418</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000378-GPOS-00163</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50088">(show)</a><br></br><div class="panel-collapse collapse" id="idm50088"><pre><code>---
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 spec:
@@ -8298,7 +8300,7 @@ spec:
       version: 3.1.0
   extensions:
     - usbguard
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_service_usbguard_enabled" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_service_usbguard_enabled" id="guide-tree-leaf-idm50092" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_service_usbguard_enabled"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_service_usbguard_enabled" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_service_usbguard_enabled" id="guide-tree-leaf-idm50093" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_service_usbguard_enabled"><span class="label label-default">Rule</span>  
                                 Enable the USBGuard Service
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_service_usbguard_enabled">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"><p>The USBGuard service should be enabled.
 
@@ -8334,7 +8336,7 @@ Operator see
 </p></p></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale"><p>The <code>usbguard</code> service must be running in order to
 enforce the USB device authorization policy for all USB devices.</p></div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td>Identifiers and References</td><td class="identifiers"><p><span class="label label-info" title="A globally meaningful identifiers for this rule. MAY be the name or identifier of a security configuration issue or vulnerability that the rule remediates. By setting an identifier on a rule, the benchmark author effectively declares that the rule instantiates, implements, or remediates the issue for which the name was assigned.">Identifiers:</span> 
             <abbr title="https://ncp.nist.gov/cce: CCE-82537-2">CCE-82537-2</abbr></p><p><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span> 
-            <a href="https://public.cyber.mil/stigs/cci/">CCI-000416</a>, <a href="https://public.cyber.mil/stigs/cci/">CCI-001958</a>, <a href="https://www.cyber.gov.au/acsc/view-all-content/ism">1418</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)(a)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000378-GPOS-00163</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50113">(show)</a><br></br><div class="panel-collapse collapse" id="idm50113"><pre><code>---
+            <a href="https://public.cyber.mil/stigs/cci/">CCI-000416</a>, <a href="https://public.cyber.mil/stigs/cci/">CCI-001958</a>, <a href="https://www.cyber.gov.au/acsc/view-all-content/ism">1418</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)(a)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000378-GPOS-00163</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50114">(show)</a><br></br><div class="panel-collapse collapse" id="idm50114"><pre><code>---
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
@@ -8348,7 +8350,7 @@ spec:
       units:
       - name: usbguard.service
         enabled: true
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend" id="guide-tree-leaf-idm50118" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend" id="guide-tree-leaf-idm50119" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend"><span class="label label-default">Rule</span>  
                                 Log USBGuard daemon audit events using Linux Audit
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"><p>To configure USBGuard daemon to log via Linux Audit
 (as opposed directly to a file),
@@ -8356,7 +8358,7 @@ spec:
 needs to be set to <code>LinuxAudit</code>.</p></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale"><p>Using the Linux Audit logging allows for centralized trace
 of events.</p></div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">low</div></td></tr><tr><td>Identifiers and References</td><td class="identifiers"><p><span class="label label-info" title="A globally meaningful identifiers for this rule. MAY be the name or identifier of a security configuration issue or vulnerability that the rule remediates. By setting an identifier on a rule, the benchmark author effectively declares that the rule instantiates, implements, or remediates the issue for which the name was assigned.">Identifiers:</span> 
             <abbr title="https://ncp.nist.gov/cce: CCE-82538-0">CCE-82538-0</abbr></p><p><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span> 
-            <a href="https://public.cyber.mil/stigs/cci/">CCI-000169</a>, <a href="https://public.cyber.mil/stigs/cci/">CCI-000172</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AU-2</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000062-GPOS-00031</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000471-GPOS-00215</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=application-servers">SRG-APP-000141-CTR-000315</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50136">(show)</a><br></br><div class="panel-collapse collapse" id="idm50136"><pre><code>---
+            <a href="https://public.cyber.mil/stigs/cci/">CCI-000169</a>, <a href="https://public.cyber.mil/stigs/cci/">CCI-000172</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AU-2</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000062-GPOS-00031</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000471-GPOS-00215</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=application-servers">SRG-APP-000141-CTR-000315</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50137">(show)</a><br></br><div class="panel-collapse collapse" id="idm50137"><pre><code>---
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
@@ -8374,7 +8376,7 @@ spec:
         mode: 0600
         path: /etc/usbguard/usbguard-daemon.conf
         overwrite: true
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub" id="guide-tree-leaf-idm50154" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub" id="guide-tree-leaf-idm50155" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_usbguard"><td style="padding-left: 57px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub"><span class="label label-default">Rule</span>  
                                 Authorize Human Interface Devices and USB hubs in USBGuard daemon
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"><p>To allow authorization of USB devices combining human interface device and hub capabilities
 by USBGuard daemon,
@@ -8385,7 +8387,7 @@ to <code>/etc/usbguard/rules.conf</code>.</p></div><div class="panel panel-warni
 to interact with the system. Without allowing hubs, it might not be possible to use any
 USB devices on the system.</p></div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td>Identifiers and References</td><td class="identifiers"><p><span class="label label-info" title="A globally meaningful identifiers for this rule. MAY be the name or identifier of a security configuration issue or vulnerability that the rule remediates. By setting an identifier on a rule, the benchmark author effectively declares that the rule instantiates, implements, or remediates the issue for which the name was assigned.">Identifiers:</span> 
             <abbr title="https://ncp.nist.gov/cce: CCE-82539-8">CCE-82539-8</abbr></p><p><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span> 
-            <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000114-GPOS-00059</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50166">(show)</a><br></br><div class="panel-collapse collapse" id="idm50166"><pre><code>---
+            <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-8(3)</a>, <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-3</a>, <a href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</a>, <a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000114-GPOS-00059</a></p></td></tr><tr><td colspan="2"><div class="remediation-description"><span class="label label-success">Remediation script:</span>   <a data-toggle="collapse" data-target="#idm50167">(show)</a><br></br><div class="panel-collapse collapse" id="idm50167"><pre><code>---
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
